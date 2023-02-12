@@ -1,0 +1,51 @@
+{
+  "name": "civitai-one-click-dl",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "version": "1.0.0",
+  "description": "Userscript to add a button to download model + images from CivitAI",
+  "source": "src/civitai-dl-btn.user.ts",
+  "browser ": "dist/civitai-dl-btn.user.js",
+  "targets": {
+    "default": {
+      "context": "browser",
+      "sourceMap": false,
+      "includeNodeModules": true
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist/",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint",
+    "check": "npm-run-all -p typecheck -p lint",
+    "watch": "parcel watch",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write ."
+  },
+  "author": "Rob",
+  "license": "MIT",
+  "devDependencies": {
+    "@damoclark/parcel-optimizer-userscript": "^0.0.2",
+    "@parcel/packager-ts": "^2.8.3",
+    "@parcel/transformer-typescript-types": "^2.8.3",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/file-saver": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "buffer": "^5.7.1",
+    "eslint": "^8.34.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.8.3",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@zip.js/zip.js": "^2.6.63",
+    "file-saver": "^2.0.5"
+  }
+}
