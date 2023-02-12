@@ -2,15 +2,16 @@
 
 Adds a "Download Images as Zip" button to [CivitAi.com](https://civitai.com/) with all of them named correctly: `<model>.preview.png` and `<model>.<number>.preview.png` if there is more than 1 image
 
-May break when trying to pick a different version of a model.
 May add the model later if I can figure out CORS.
 
 ## Preview
 
 New Download Button:
+
 ![Buttons](./previews/buttons.png)
 
 Images inside the ZIP:
+
 ![ZIP FileList](./previews/files.png)
 
 ## [Click to Install](https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js)
