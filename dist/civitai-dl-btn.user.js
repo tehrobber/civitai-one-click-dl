@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.2.0
+// @version     1.2.1
 // @author      Rob
 // @description Adds a button to download sample images in one click for CivitAI
 // ==/UserScript==
@@ -22,6 +22,48 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
+/*! @violentmonkey/url v0.1.0 | MIT License */ var $4bc3cf6236ab4204$var$_VM;
+const $4bc3cf6236ab4204$var$navigateCallbacks = new Set();
+let $4bc3cf6236ab4204$var$historyHijacked = false;
+function $4bc3cf6236ab4204$export$fb7d96fbb76a9f40(fn, options) {
+    const hijacked = function(...args) {
+        const ctx = {
+            args: args,
+            result: undefined
+        };
+        options == null || options.before == null || options.before(ctx);
+        ctx.result = fn.apply(this, ctx.args);
+        options == null || options.after == null || options.after(ctx);
+        return ctx.result;
+    };
+    hijacked.__fn = fn;
+    return hijacked;
+}
+function $4bc3cf6236ab4204$var$hookHistory() {
+    if ($4bc3cf6236ab4204$var$historyHijacked) return;
+    $4bc3cf6236ab4204$var$historyHijacked = true;
+    window.history.pushState = $4bc3cf6236ab4204$export$fb7d96fbb76a9f40(window.history.pushState, {
+        after: $4bc3cf6236ab4204$var$handleNavigate
+    });
+    window.history.replaceState = $4bc3cf6236ab4204$export$fb7d96fbb76a9f40(window.history.replaceState, {
+        after: $4bc3cf6236ab4204$var$handleNavigate
+    });
+}
+function $4bc3cf6236ab4204$var$handleNavigate() {
+    $4bc3cf6236ab4204$var$navigateCallbacks.forEach((callback)=>callback());
+}
+function $4bc3cf6236ab4204$export$ceb91cd67dddeff1(callback) {
+    $4bc3cf6236ab4204$var$hookHistory();
+    $4bc3cf6236ab4204$var$navigateCallbacks.add(callback);
+    return ()=>{
+        $4bc3cf6236ab4204$var$navigateCallbacks.delete(callback);
+    };
+}
+const $4bc3cf6236ab4204$export$3acacdf112fc9c85 = Object.assign(typeof VM !== "undefined" && (($4bc3cf6236ab4204$var$_VM = VM) == null ? void 0 : $4bc3cf6236ab4204$var$_VM.versions) || {}, {
+    url: "0.1.0"
+});
+
+
 /// <reference types="./index.d.ts" />
 /*
  Copyright (c) 2022 Gildas Lormeau. All rights reserved.
@@ -12199,19 +12241,6 @@ var $2c122ddba3ce3fee$exports = {};
 });
 
 
-/**
- * Minimal subset of the API needed
- * @see https://github.com/civitai/civitai/wiki/REST-API-Reference#get-apiv1models
- */ const $a8a75b092056e5d9$export$289ca1c318c0384 = async (id)=>{
-    const response = await fetch(`https://civitai.com/api/v1/models/${id}`);
-    return await response.json();
-};
-const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
-    const response = await fetch(`https://civitai.com/api/v1/model-versions/${id}`);
-    return await response.json();
-};
-
-
 var $c9e6b0ca29a40fb4$exports = {};
 var $b39a89555bb8ef0d$exports = {};
 /**
@@ -12617,6 +12646,19 @@ $5e80e10edfcaebeb$exports = $5e80e10edfcaebeb$var$toNumber;
 $c9e6b0ca29a40fb4$exports = $c9e6b0ca29a40fb4$var$debounce;
 
 
+/**
+ * Minimal subset of the API needed
+ * @see https://github.com/civitai/civitai/wiki/REST-API-Reference#get-apiv1models
+ */ const $a8a75b092056e5d9$export$289ca1c318c0384 = async (id)=>{
+    const response = await fetch(`https://civitai.com/api/v1/models/${id}`);
+    return await response.json();
+};
+const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
+    const response = await fetch(`https://civitai.com/api/v1/model-versions/${id}`);
+    return await response.json();
+};
+
+
 const $94843b0d32cea2cf$var$uniqueIdPrefix = `__userscript_civitai-one-click-dl-`;
 const $94843b0d32cea2cf$var$attributesToCopy = [
     "class",
@@ -12732,13 +12774,11 @@ window.addEventListener("DOMContentLoaded", $94843b0d32cea2cf$var$debouncedAddIm
 // we watch the `main` element for any changes
 // this is why we have dedupe logic and conditional logic
 // see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
-const $94843b0d32cea2cf$var$observer = new MutationObserver($94843b0d32cea2cf$var$debouncedAddImages);
-document.querySelectorAll(`main`).forEach((mainElement)=>{
-    $94843b0d32cea2cf$var$observer.observe(mainElement, {
-        attributes: false,
-        childList: true,
-        subtree: true
-    });
-});
+// const observer = new MutationObserver(debouncedAddImages)
+// document.querySelectorAll(`main`).forEach((mainElement) => {
+//   observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
+// })
+// see https://www.npmjs.com/package/@violentmonkey/url
+(0, $4bc3cf6236ab4204$export$ceb91cd67dddeff1)($94843b0d32cea2cf$var$addButtons);
 
 })();

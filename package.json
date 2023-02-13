@@ -33,6 +33,7 @@
     "@types/lodash": "^4.14.191",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
+    "@violentmonkey/types": "^0.1.5",
     "buffer": "^5.7.1",
     "eslint": "^8.34.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
@@ -46,6 +47,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@violentmonkey/url": "^0.1.0",
     "@zip.js/zip.js": "^2.6.63",
     "file-saver": "^2.0.5",
     "lodash": "^4.17.21"

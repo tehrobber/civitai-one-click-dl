@@ -1,7 +1,8 @@
-import { BlobWriter, ZipWriter, HttpReader, HttpOptions } from "@zip.js/zip.js"
-import { saveAs } from 'file-saver'
-import { getModelVersion } from "./civit-api"
-import debounce from 'lodash/debounce'
+import { onNavigate } from '@violentmonkey/url';
+import { BlobWriter, HttpOptions, HttpReader, ZipWriter } from "@zip.js/zip.js";
+import { saveAs } from 'file-saver';
+import debounce from 'lodash/debounce';
+import { getModelVersion } from "./civit-api";
 
 const uniqueIdPrefix = `__userscript_civitai-one-click-dl-`
 const attributesToCopy = ["class", "type", "data-button", "download"]
@@ -81,6 +82,7 @@ const addImageDownloadBtn = async (downloadBtn: HTMLAnchorElement | undefined): 
     const httpOptions: HttpOptions = {
       preventHeadRequest: true,
       useXHR: true,
+
       // headers: httpHeaders
     }
 
@@ -167,8 +169,11 @@ window.addEventListener("DOMContentLoaded", debouncedAddImages)
 // this is why we have dedupe logic and conditional logic
 
 // see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
-const observer = new MutationObserver(debouncedAddImages)
+// const observer = new MutationObserver(debouncedAddImages)
 
-document.querySelectorAll(`main`).forEach((mainElement) => {
-  observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
-})
+// document.querySelectorAll(`main`).forEach((mainElement) => {
+//   observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
+// })
+
+// see https://www.npmjs.com/package/@violentmonkey/url
+onNavigate(addButtons)
