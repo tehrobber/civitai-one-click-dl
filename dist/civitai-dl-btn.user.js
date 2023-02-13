@@ -5,6 +5,7 @@
 // @grant       none
 // @version     1.2.1
 // @author      Rob
+// @license     MIT
 // @description Adds a button to download sample images in one click for CivitAI
 // ==/UserScript==
 
