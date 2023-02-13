@@ -9,9 +9,9 @@
 // ==/UserScript==
 
 (function () {
-    function $parcel$interopDefault(a) {
-        return a && a.__esModule ? a.default : a;
-    }
+function $parcel$interopDefault(a) {
+  return a && a.__esModule ? a.default : a;
+}
 var $parcel$global =
 typeof globalThis !== 'undefined'
   ? globalThis
@@ -12212,8 +12212,8 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
 };
 
 
-    var $c9e6b0ca29a40fb4$exports = {};
-    var $b39a89555bb8ef0d$exports = {};
+var $c9e6b0ca29a40fb4$exports = {};
+var $b39a89555bb8ef0d$exports = {};
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -12239,22 +12239,22 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * _.isObject(null);
  * // => false
  */ function $b39a89555bb8ef0d$var$isObject(value) {
-        var type = typeof value;
-        return value != null && (type == "object" || type == "function");
-    }
-    $b39a89555bb8ef0d$exports = $b39a89555bb8ef0d$var$isObject;
+    var type = typeof value;
+    return value != null && (type == "object" || type == "function");
+}
+$b39a89555bb8ef0d$exports = $b39a89555bb8ef0d$var$isObject;
 
 
-    var $aa1b7a5904f780d4$exports = {};
-    var $045578d3d235f8fb$exports = {};
-    var $38810eff54530420$exports = {};
+var $aa1b7a5904f780d4$exports = {};
+var $045578d3d235f8fb$exports = {};
+var $38810eff54530420$exports = {};
 /** Detect free variable `global` from Node.js. */ var $38810eff54530420$var$freeGlobal = typeof $parcel$global == "object" && $parcel$global && $parcel$global.Object === Object && $parcel$global;
-    $38810eff54530420$exports = $38810eff54530420$var$freeGlobal;
+$38810eff54530420$exports = $38810eff54530420$var$freeGlobal;
 
 
 /** Detect free variable `self`. */ var $045578d3d235f8fb$var$freeSelf = typeof self == "object" && self && self.Object === Object && self;
 /** Used as a reference to the global object. */ var $045578d3d235f8fb$var$root = $38810eff54530420$exports || $045578d3d235f8fb$var$freeSelf || Function("return this")();
-    $045578d3d235f8fb$exports = $045578d3d235f8fb$var$root;
+$045578d3d235f8fb$exports = $045578d3d235f8fb$var$root;
 
 
 /**
@@ -12272,15 +12272,15 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  *   console.log(_.now() - stamp);
  * }, _.now());
  * // => Logs the number of milliseconds it took for the deferred invocation.
- */ var $aa1b7a5904f780d4$var$now = function () {
-        return $045578d3d235f8fb$exports.Date.now();
-    };
-    $aa1b7a5904f780d4$exports = $aa1b7a5904f780d4$var$now;
+ */ var $aa1b7a5904f780d4$var$now = function() {
+    return $045578d3d235f8fb$exports.Date.now();
+};
+$aa1b7a5904f780d4$exports = $aa1b7a5904f780d4$var$now;
 
 
-    var $5e80e10edfcaebeb$exports = {};
-    var $b90d40d0c57237f7$exports = {};
-    var $c81269914af74e25$exports = {};
+var $5e80e10edfcaebeb$exports = {};
+var $b90d40d0c57237f7$exports = {};
+var $c81269914af74e25$exports = {};
 /** Used to match a single whitespace character. */ var $c81269914af74e25$var$reWhitespace = /\s/;
 /**
  * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
@@ -12290,11 +12290,11 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * @param {string} string The string to inspect.
  * @returns {number} Returns the index of the last non-whitespace character.
  */ function $c81269914af74e25$var$trimmedEndIndex(string) {
-        var index = string.length;
-        while (index-- && $c81269914af74e25$var$reWhitespace.test(string.charAt(index)));
-        return index;
-    }
-    $c81269914af74e25$exports = $c81269914af74e25$var$trimmedEndIndex;
+    var index = string.length;
+    while(index-- && $c81269914af74e25$var$reWhitespace.test(string.charAt(index)));
+    return index;
+}
+$c81269914af74e25$exports = $c81269914af74e25$var$trimmedEndIndex;
 
 
 /** Used to match leading whitespace. */ var $b90d40d0c57237f7$var$reTrimStart = /^\s+/;
@@ -12305,21 +12305,21 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * @param {string} string The string to trim.
  * @returns {string} Returns the trimmed string.
  */ function $b90d40d0c57237f7$var$baseTrim(string) {
-        return string ? string.slice(0, $c81269914af74e25$exports(string) + 1).replace($b90d40d0c57237f7$var$reTrimStart, "") : string;
-    }
-    $b90d40d0c57237f7$exports = $b90d40d0c57237f7$var$baseTrim;
+    return string ? string.slice(0, $c81269914af74e25$exports(string) + 1).replace($b90d40d0c57237f7$var$reTrimStart, "") : string;
+}
+$b90d40d0c57237f7$exports = $b90d40d0c57237f7$var$baseTrim;
 
 
 
-    var $59975c2fa6bedc50$exports = {};
-    var $cf299aca613481aa$exports = {};
-    var $7b8261cf4be954e7$exports = {};
+var $59975c2fa6bedc50$exports = {};
+var $cf299aca613481aa$exports = {};
+var $7b8261cf4be954e7$exports = {};
 
 /** Built-in value references. */ var $7b8261cf4be954e7$var$Symbol = $045578d3d235f8fb$exports.Symbol;
-    $7b8261cf4be954e7$exports = $7b8261cf4be954e7$var$Symbol;
+$7b8261cf4be954e7$exports = $7b8261cf4be954e7$var$Symbol;
 
 
-    var $97304ac8388389aa$exports = {};
+var $97304ac8388389aa$exports = {};
 
 /** Used for built-in method references. */ var $97304ac8388389aa$var$objectProto = Object.prototype;
 /** Used to check objects for own properties. */ var $97304ac8388389aa$var$hasOwnProperty = $97304ac8388389aa$var$objectProto.hasOwnProperty;
@@ -12336,22 +12336,22 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * @param {*} value The value to query.
  * @returns {string} Returns the raw `toStringTag`.
  */ function $97304ac8388389aa$var$getRawTag(value) {
-        var isOwn = $97304ac8388389aa$var$hasOwnProperty.call(value, $97304ac8388389aa$var$symToStringTag), tag = value[$97304ac8388389aa$var$symToStringTag];
-        try {
-            value[$97304ac8388389aa$var$symToStringTag] = undefined;
-            var unmasked = true;
-        } catch (e) { }
-        var result = $97304ac8388389aa$var$nativeObjectToString.call(value);
-        if (unmasked) {
-            if (isOwn) value[$97304ac8388389aa$var$symToStringTag] = tag;
-            else delete value[$97304ac8388389aa$var$symToStringTag];
-        }
-        return result;
+    var isOwn = $97304ac8388389aa$var$hasOwnProperty.call(value, $97304ac8388389aa$var$symToStringTag), tag = value[$97304ac8388389aa$var$symToStringTag];
+    try {
+        value[$97304ac8388389aa$var$symToStringTag] = undefined;
+        var unmasked = true;
+    } catch (e) {}
+    var result = $97304ac8388389aa$var$nativeObjectToString.call(value);
+    if (unmasked) {
+        if (isOwn) value[$97304ac8388389aa$var$symToStringTag] = tag;
+        else delete value[$97304ac8388389aa$var$symToStringTag];
     }
-    $97304ac8388389aa$exports = $97304ac8388389aa$var$getRawTag;
+    return result;
+}
+$97304ac8388389aa$exports = $97304ac8388389aa$var$getRawTag;
 
 
-    var $03818c4436bdc756$exports = {};
+var $03818c4436bdc756$exports = {};
 /** Used for built-in method references. */ var $03818c4436bdc756$var$objectProto = Object.prototype;
 /**
  * Used to resolve the
@@ -12365,9 +12365,9 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * @param {*} value The value to convert.
  * @returns {string} Returns the converted string.
  */ function $03818c4436bdc756$var$objectToString(value) {
-        return $03818c4436bdc756$var$nativeObjectToString.call(value);
-    }
-    $03818c4436bdc756$exports = $03818c4436bdc756$var$objectToString;
+    return $03818c4436bdc756$var$nativeObjectToString.call(value);
+}
+$03818c4436bdc756$exports = $03818c4436bdc756$var$objectToString;
 
 
 /** `Object#toString` result references. */ var $cf299aca613481aa$var$nullTag = "[object Null]", $cf299aca613481aa$var$undefinedTag = "[object Undefined]";
@@ -12379,13 +12379,13 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * @param {*} value The value to query.
  * @returns {string} Returns the `toStringTag`.
  */ function $cf299aca613481aa$var$baseGetTag(value) {
-        if (value == null) return value === undefined ? $cf299aca613481aa$var$undefinedTag : $cf299aca613481aa$var$nullTag;
-        return $cf299aca613481aa$var$symToStringTag && $cf299aca613481aa$var$symToStringTag in Object(value) ? $97304ac8388389aa$exports(value) : $03818c4436bdc756$exports(value);
-    }
-    $cf299aca613481aa$exports = $cf299aca613481aa$var$baseGetTag;
+    if (value == null) return value === undefined ? $cf299aca613481aa$var$undefinedTag : $cf299aca613481aa$var$nullTag;
+    return $cf299aca613481aa$var$symToStringTag && $cf299aca613481aa$var$symToStringTag in Object(value) ? $97304ac8388389aa$exports(value) : $03818c4436bdc756$exports(value);
+}
+$cf299aca613481aa$exports = $cf299aca613481aa$var$baseGetTag;
 
 
-    var $0384fa7007a22e20$exports = {};
+var $0384fa7007a22e20$exports = {};
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -12410,9 +12410,9 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * _.isObjectLike(null);
  * // => false
  */ function $0384fa7007a22e20$var$isObjectLike(value) {
-        return value != null && typeof value == "object";
-    }
-    $0384fa7007a22e20$exports = $0384fa7007a22e20$var$isObjectLike;
+    return value != null && typeof value == "object";
+}
+$0384fa7007a22e20$exports = $0384fa7007a22e20$var$isObjectLike;
 
 
 /** `Object#toString` result references. */ var $59975c2fa6bedc50$var$symbolTag = "[object Symbol]";
@@ -12433,9 +12433,9 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * _.isSymbol('abc');
  * // => false
  */ function $59975c2fa6bedc50$var$isSymbol(value) {
-        return typeof value == "symbol" || $0384fa7007a22e20$exports(value) && $cf299aca613481aa$exports(value) == $59975c2fa6bedc50$var$symbolTag;
-    }
-    $59975c2fa6bedc50$exports = $59975c2fa6bedc50$var$isSymbol;
+    return typeof value == "symbol" || $0384fa7007a22e20$exports(value) && $cf299aca613481aa$exports(value) == $59975c2fa6bedc50$var$symbolTag;
+}
+$59975c2fa6bedc50$exports = $59975c2fa6bedc50$var$isSymbol;
 
 
 /** Used as references for various `Number` constants. */ var $5e80e10edfcaebeb$var$NAN = 0 / 0;
@@ -12466,18 +12466,18 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * _.toNumber('3.2');
  * // => 3.2
  */ function $5e80e10edfcaebeb$var$toNumber(value) {
-        if (typeof value == "number") return value;
-        if ($59975c2fa6bedc50$exports(value)) return $5e80e10edfcaebeb$var$NAN;
-        if ($b39a89555bb8ef0d$exports(value)) {
-            var other = typeof value.valueOf == "function" ? value.valueOf() : value;
-            value = $b39a89555bb8ef0d$exports(other) ? other + "" : other;
-        }
-        if (typeof value != "string") return value === 0 ? value : +value;
-        value = $b90d40d0c57237f7$exports(value);
-        var isBinary = $5e80e10edfcaebeb$var$reIsBinary.test(value);
-        return isBinary || $5e80e10edfcaebeb$var$reIsOctal.test(value) ? $5e80e10edfcaebeb$var$freeParseInt(value.slice(2), isBinary ? 2 : 8) : $5e80e10edfcaebeb$var$reIsBadHex.test(value) ? $5e80e10edfcaebeb$var$NAN : +value;
+    if (typeof value == "number") return value;
+    if ($59975c2fa6bedc50$exports(value)) return $5e80e10edfcaebeb$var$NAN;
+    if ($b39a89555bb8ef0d$exports(value)) {
+        var other = typeof value.valueOf == "function" ? value.valueOf() : value;
+        value = $b39a89555bb8ef0d$exports(other) ? other + "" : other;
     }
-    $5e80e10edfcaebeb$exports = $5e80e10edfcaebeb$var$toNumber;
+    if (typeof value != "string") return value === 0 ? value : +value;
+    value = $b90d40d0c57237f7$exports(value);
+    var isBinary = $5e80e10edfcaebeb$var$reIsBinary.test(value);
+    return isBinary || $5e80e10edfcaebeb$var$reIsOctal.test(value) ? $5e80e10edfcaebeb$var$freeParseInt(value.slice(2), isBinary ? 2 : 8) : $5e80e10edfcaebeb$var$reIsBadHex.test(value) ? $5e80e10edfcaebeb$var$NAN : +value;
+}
+$5e80e10edfcaebeb$exports = $5e80e10edfcaebeb$var$toNumber;
 
 
 /** Error message constants. */ var $c9e6b0ca29a40fb4$var$FUNC_ERROR_TEXT = "Expected a function";
@@ -12536,88 +12536,88 @@ const $a8a75b092056e5d9$export$a1f3aa2348cfe4a7 = async (id)=>{
  * // Cancel the trailing debounced invocation.
  * jQuery(window).on('popstate', debounced.cancel);
  */ function $c9e6b0ca29a40fb4$var$debounce(func, wait, options) {
-        var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
-        if (typeof func != "function") throw new TypeError($c9e6b0ca29a40fb4$var$FUNC_ERROR_TEXT);
-        wait = $5e80e10edfcaebeb$exports(wait) || 0;
-        if ($b39a89555bb8ef0d$exports(options)) {
-            leading = !!options.leading;
-            maxing = "maxWait" in options;
-            maxWait = maxing ? $c9e6b0ca29a40fb4$var$nativeMax($5e80e10edfcaebeb$exports(options.maxWait) || 0, wait) : maxWait;
-            trailing = "trailing" in options ? !!options.trailing : trailing;
-        }
-        function invokeFunc(time) {
-            var args = lastArgs, thisArg = lastThis;
-            lastArgs = lastThis = undefined;
-            lastInvokeTime = time;
-            result = func.apply(thisArg, args);
-            return result;
-        }
-        function leadingEdge(time) {
-            // Reset any `maxWait` timer.
-            lastInvokeTime = time;
-            // Start the timer for the trailing edge.
-            timerId = setTimeout(timerExpired, wait);
-            // Invoke the leading edge.
-            return leading ? invokeFunc(time) : result;
-        }
-        function remainingWait(time) {
-            var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, timeWaiting = wait - timeSinceLastCall;
-            return maxing ? $c9e6b0ca29a40fb4$var$nativeMin(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
-        }
-        function shouldInvoke(time) {
-            var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
-            // Either this is the first call, activity has stopped and we're at the
-            // trailing edge, the system time has gone backwards and we're treating
-            // it as the trailing edge, or we've hit the `maxWait` limit.
-            return lastCallTime === undefined || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
-        }
-        function timerExpired() {
-            var time = $aa1b7a5904f780d4$exports();
-            if (shouldInvoke(time)) return trailingEdge(time);
-            // Restart the timer.
-            timerId = setTimeout(timerExpired, remainingWait(time));
-        }
-        function trailingEdge(time) {
-            timerId = undefined;
-            // Only invoke if we have `lastArgs` which means `func` has been
-            // debounced at least once.
-            if (trailing && lastArgs) return invokeFunc(time);
-            lastArgs = lastThis = undefined;
-            return result;
-        }
-        function cancel() {
-            if (timerId !== undefined) clearTimeout(timerId);
-            lastInvokeTime = 0;
-            lastArgs = lastCallTime = lastThis = timerId = undefined;
-        }
-        function flush() {
-            return timerId === undefined ? result : trailingEdge($aa1b7a5904f780d4$exports());
-        }
-        function debounced() {
-            var time = $aa1b7a5904f780d4$exports(), isInvoking = shouldInvoke(time);
-            lastArgs = arguments;
-            lastThis = this;
-            lastCallTime = time;
-            if (isInvoking) {
-                if (timerId === undefined) return leadingEdge(lastCallTime);
-                if (maxing) {
-                    // Handle invocations in a tight loop.
-                    clearTimeout(timerId);
-                    timerId = setTimeout(timerExpired, wait);
-                    return invokeFunc(lastCallTime);
-                }
-            }
-            if (timerId === undefined) timerId = setTimeout(timerExpired, wait);
-            return result;
-        }
-        debounced.cancel = cancel;
-        debounced.flush = flush;
-        return debounced;
+    var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
+    if (typeof func != "function") throw new TypeError($c9e6b0ca29a40fb4$var$FUNC_ERROR_TEXT);
+    wait = $5e80e10edfcaebeb$exports(wait) || 0;
+    if ($b39a89555bb8ef0d$exports(options)) {
+        leading = !!options.leading;
+        maxing = "maxWait" in options;
+        maxWait = maxing ? $c9e6b0ca29a40fb4$var$nativeMax($5e80e10edfcaebeb$exports(options.maxWait) || 0, wait) : maxWait;
+        trailing = "trailing" in options ? !!options.trailing : trailing;
     }
-    $c9e6b0ca29a40fb4$exports = $c9e6b0ca29a40fb4$var$debounce;
+    function invokeFunc(time) {
+        var args = lastArgs, thisArg = lastThis;
+        lastArgs = lastThis = undefined;
+        lastInvokeTime = time;
+        result = func.apply(thisArg, args);
+        return result;
+    }
+    function leadingEdge(time) {
+        // Reset any `maxWait` timer.
+        lastInvokeTime = time;
+        // Start the timer for the trailing edge.
+        timerId = setTimeout(timerExpired, wait);
+        // Invoke the leading edge.
+        return leading ? invokeFunc(time) : result;
+    }
+    function remainingWait(time) {
+        var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, timeWaiting = wait - timeSinceLastCall;
+        return maxing ? $c9e6b0ca29a40fb4$var$nativeMin(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
+    }
+    function shouldInvoke(time) {
+        var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
+        // Either this is the first call, activity has stopped and we're at the
+        // trailing edge, the system time has gone backwards and we're treating
+        // it as the trailing edge, or we've hit the `maxWait` limit.
+        return lastCallTime === undefined || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
+    }
+    function timerExpired() {
+        var time = $aa1b7a5904f780d4$exports();
+        if (shouldInvoke(time)) return trailingEdge(time);
+        // Restart the timer.
+        timerId = setTimeout(timerExpired, remainingWait(time));
+    }
+    function trailingEdge(time) {
+        timerId = undefined;
+        // Only invoke if we have `lastArgs` which means `func` has been
+        // debounced at least once.
+        if (trailing && lastArgs) return invokeFunc(time);
+        lastArgs = lastThis = undefined;
+        return result;
+    }
+    function cancel() {
+        if (timerId !== undefined) clearTimeout(timerId);
+        lastInvokeTime = 0;
+        lastArgs = lastCallTime = lastThis = timerId = undefined;
+    }
+    function flush() {
+        return timerId === undefined ? result : trailingEdge($aa1b7a5904f780d4$exports());
+    }
+    function debounced() {
+        var time = $aa1b7a5904f780d4$exports(), isInvoking = shouldInvoke(time);
+        lastArgs = arguments;
+        lastThis = this;
+        lastCallTime = time;
+        if (isInvoking) {
+            if (timerId === undefined) return leadingEdge(lastCallTime);
+            if (maxing) {
+                // Handle invocations in a tight loop.
+                clearTimeout(timerId);
+                timerId = setTimeout(timerExpired, wait);
+                return invokeFunc(lastCallTime);
+            }
+        }
+        if (timerId === undefined) timerId = setTimeout(timerExpired, wait);
+        return result;
+    }
+    debounced.cancel = cancel;
+    debounced.flush = flush;
+    return debounced;
+}
+$c9e6b0ca29a40fb4$exports = $c9e6b0ca29a40fb4$var$debounce;
 
 
-    const $94843b0d32cea2cf$var$uniqueIdPrefix = `__userscript_civitai-one-click-dl-`;
+const $94843b0d32cea2cf$var$uniqueIdPrefix = `__userscript_civitai-one-click-dl-`;
 const $94843b0d32cea2cf$var$attributesToCopy = [
     "class",
     "type",
@@ -12635,17 +12635,17 @@ const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
     const uniqueId = `${$94843b0d32cea2cf$var$uniqueIdPrefix}${modelVersionString}`;
     const existingBtns = document.querySelectorAll(`a[id=${uniqueId}]`);
     if (existingBtns.length > 0) // we have button(s), nothing to do here
-        return;
+    return;
     // ok now we can make the button
     const downloadWithImagesBtn = document.createElement("a");
     downloadWithImagesBtn.innerText = "Download with Images";
-    for (const attr of $94843b0d32cea2cf$var$attributesToCopy) {
+    for (const attr of $94843b0d32cea2cf$var$attributesToCopy){
         const attrValue = downloadBtn.getAttribute(attr);
         if (attrValue) downloadWithImagesBtn.setAttribute(attr, attrValue);
     }
     downloadWithImagesBtn.innerHTML = downloadBtn.innerHTML;
     let downloadWithImagesTextDiv;
-    downloadWithImagesBtn.querySelectorAll(`div`).forEach((div) => {
+    downloadWithImagesBtn.querySelectorAll(`div`).forEach((div)=>{
         if (div.innerText.includes("Download")) downloadWithImagesTextDiv = div;
     });
     if (downloadWithImagesTextDiv) downloadWithImagesTextDiv.innerText = "Download Images as Zip";
@@ -12656,9 +12656,9 @@ const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
     // const downloadUrl = modelVersionRes.downloadUrl
     const modelName = modelVersionRes.files[0].name;
     // const downloadUrl = modelVersionRes.files[0].downloadUrl
-    const imageUrls = modelVersionRes.images.map((image) => image.url);
+    const imageUrls = modelVersionRes.images.map((image)=>image.url);
     const modelNameNoExt = modelName.split(".").slice(0, -1).join(".");
-    const handleClick = async () => {
+    const handleClick = async ()=>{
         // create ZIP with all images/model
         const blobWriter = new (0, $ed1c60ca8f2b51f4$export$b1948fceba813858)(`application/zip`);
         const zipWriter = new (0, $e035d6de58b92901$export$50f5658480930b4c)(blobWriter);
@@ -12671,7 +12671,7 @@ const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
         const downloadPromises = [];
         // TODO CORS says no for now
         // downloadPromises.push(zipWriter.add(modelName, new HttpReader(downloadUrl, httpOptions)))
-        for (let idx = 0; idx < imageUrls.length; idx++) {
+        for(let idx = 0; idx < imageUrls.length; idx++){
             const imageUrl = imageUrls[idx];
             const httpReader = new (0, $ed1c60ca8f2b51f4$export$34b9a22e660cb902)(imageUrl, httpOptions);
             downloadPromises.push(zipWriter.add(`${modelNameNoExt}${idx === 0 ? "" : `.${idx}`}.preview.png`, httpReader));
@@ -12711,27 +12711,28 @@ const $94843b0d32cea2cf$var$addButtons = async ()=>{
     const addBtnPromises = [
         $94843b0d32cea2cf$var$addImageDownloadBtn(downloadLatestButton)
     ];
-    for (const downloadVersionButton of downloadVersionButtons) addBtnPromises.push($94843b0d32cea2cf$var$addImageDownloadBtn(downloadVersionButton));
+    for (const downloadVersionButton of downloadVersionButtons)addBtnPromises.push($94843b0d32cea2cf$var$addImageDownloadBtn(downloadVersionButton));
     await Promise.all(addBtnPromises);
 };
+const $94843b0d32cea2cf$var$debouncedAddImages = (0, (/*@__PURE__*/$parcel$interopDefault($c9e6b0ca29a40fb4$exports)))($94843b0d32cea2cf$var$addButtons, 200, {
+    leading: false,
+    trailing: true
+});
 // After DOM is built, but before images/other assets are loaded
 // see https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-    // window.addEventListener("DOMContentLoaded", addButtons)
-    // window.addEventListener("popstate", addButtons)
-    // because NextJS's router is garbage and doesn't fire web standard methods,
-    // we watch the `main` element for any changes
-    // this is why we have dedupe logic and conditional logic
-    // see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
-    const $94843b0d32cea2cf$var$observer = new MutationObserver((0, (/*@__PURE__*/$parcel$interopDefault($c9e6b0ca29a40fb4$exports)))($94843b0d32cea2cf$var$addButtons, 200, {
-        leading: false,
-        trailing: true
-    }));
-    document.querySelectorAll(`main`).forEach((mainElement) => {
-        $94843b0d32cea2cf$var$observer.observe(mainElement, {
-            attributes: false,
-            childList: true,
-            subtree: true
-        });
+window.addEventListener("DOMContentLoaded", $94843b0d32cea2cf$var$debouncedAddImages);
+// window.addEventListener("popstate", addButtons)
+// because NextJS's router is garbage and doesn't fire web standard methods,
+// we watch the `main` element for any changes
+// this is why we have dedupe logic and conditional logic
+// see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
+const $94843b0d32cea2cf$var$observer = new MutationObserver($94843b0d32cea2cf$var$debouncedAddImages);
+document.querySelectorAll(`main`).forEach((mainElement)=>{
+    $94843b0d32cea2cf$var$observer.observe(mainElement, {
+        attributes: false,
+        childList: true,
+        subtree: true
     });
+});
 
 })();
