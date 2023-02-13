@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.1
+// @version     1.2.0
 // @author      Rob
 // @description Adds a button to download sample images in one click for CivitAI
 // ==/UserScript==
@@ -12656,7 +12656,13 @@ const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
     // const downloadUrl = modelVersionRes.downloadUrl
     const modelName = modelVersionRes.files[0].name;
     // const downloadUrl = modelVersionRes.files[0].downloadUrl
-    const imageUrls = modelVersionRes.images.map((image)=>image.url);
+    const imageUrls = modelVersionRes.images.map((image)=>{
+        // image URLs by default will resize and lose metadata
+        // update the URL to the original size to get that metadata
+        const originalWidth = image.width;
+        const imageUrl = image.url.replace(/width=\d+/, `width=${originalWidth}`);
+        return imageUrl;
+    });
     const modelNameNoExt = modelName.split(".").slice(0, -1).join(".");
     const handleClick = async ()=>{
         // create ZIP with all images/model
