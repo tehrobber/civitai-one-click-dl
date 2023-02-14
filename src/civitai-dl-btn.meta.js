@@ -6,5 +6,8 @@
 // @version     1.3.0
 // @license     MIT
 // @author      Rob
+// @updateURL   https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js
+// @downloadURL https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js
+// @supportURL  https://github.com/tehrobber/civitai-one-click-dl/issues
 // @description Adds a button to download sample images in one click for CivitAI
 // ==/UserScript==
