@@ -172,7 +172,7 @@ const debouncedAddImages = debounce(
 
 // After DOM is built, but before images/other assets are loaded
 // see https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-// window.addEventListener("DOMContentLoaded", debouncedAddImages)
+addEventListener("DOMContentLoaded", debouncedAddImages)
 // window.addEventListener("popstate", addButtons)
 
 // because NextJS's router is garbage and doesn't fire web standard methods,
