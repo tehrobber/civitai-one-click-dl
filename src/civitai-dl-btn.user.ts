@@ -1,5 +1,5 @@
 import { onNavigate } from '@violentmonkey/url';
-import { BlobWriter, HttpOptions, HttpReader, ZipWriter } from "@zip.js/zip.js";
+import { BlobWriter, EntryMetaData, HttpOptions, HttpReader, ZipWriter } from "@zip.js/zip.js";
 import { saveAs } from 'file-saver';
 import debounce from 'lodash/debounce';
 import { getModelVersion } from "./civit-api";
@@ -86,7 +86,7 @@ const addImageDownloadBtn = async (downloadBtn: HTMLAnchorElement | undefined): 
       // headers: httpHeaders
     }
 
-    const downloadPromises = []
+    const downloadPromises = [] as Promise<EntryMetaData>[]
     // TODO CORS says no for now
     // downloadPromises.push(zipWriter.add(modelName, new HttpReader(downloadUrl, httpOptions)))
 
