@@ -12,6 +12,15 @@ const addImageDownloadBtn = async (downloadBtn: HTMLAnchorElement | undefined): 
     return
   }
 
+  const parentNode = downloadBtn.parentNode
+  if (!parentNode) {
+    return
+  }
+
+  if (!(parentNode instanceof HTMLDivElement)) {
+    return;
+  }
+
   // this is a bit roundabout since we already have the DL images, but this is cleaner
   // than trying to scrape the HTML for the image URLs
   const modelVersionString = downloadBtn.href.match(`\\d+`)?.[0]
@@ -51,7 +60,6 @@ const addImageDownloadBtn = async (downloadBtn: HTMLAnchorElement | undefined): 
   if (downloadWithImagesTextDiv) {
     downloadWithImagesTextDiv.innerText = "Download Images as Zip"
   }
-
 
   const modelVersion = parseInt(modelVersionString)
   const modelVersionRes = await getModelVersion(modelVersion)
@@ -113,7 +121,10 @@ const addImageDownloadBtn = async (downloadBtn: HTMLAnchorElement | undefined): 
   downloadWithImagesBtn.id = uniqueId;
 
   // insert button to HTML
-  downloadBtn.parentNode?.appendChild(downloadWithImagesBtn)
+  parentNode.appendChild(downloadWithImagesBtn)
+
+  // see https://github.com/tehrobber/civitai-one-click-dl/issues/3
+  parentNode.style.flexFlow = "wrap"
 }
 
 const addButtons = async () => {
@@ -176,4 +187,4 @@ window.addEventListener("DOMContentLoaded", debouncedAddImages)
 // })
 
 // see https://www.npmjs.com/package/@violentmonkey/url
-onNavigate(addButtons)
+onNavigate(debouncedAddImages)

@@ -3,9 +3,9 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.2.1
-// @author      Rob
+// @version     1.3.0
 // @license     MIT
+// @author      Rob
 // @description Adds a button to download sample images in one click for CivitAI
 // ==/UserScript==
 
@@ -12669,6 +12669,9 @@ const $94843b0d32cea2cf$var$attributesToCopy = [
 ];
 const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
     if (!downloadBtn) return;
+    const parentNode = downloadBtn.parentNode;
+    if (!parentNode) return;
+    if (!(parentNode instanceof HTMLDivElement)) return;
     // this is a bit roundabout since we already have the DL images, but this is cleaner
     // than trying to scrape the HTML for the image URLs
     const modelVersionString = downloadBtn.href.match(`\\d+`)?.[0];
@@ -12736,7 +12739,9 @@ const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
     // for dedupe logic
     downloadWithImagesBtn.id = uniqueId;
     // insert button to HTML
-    downloadBtn.parentNode?.appendChild(downloadWithImagesBtn);
+    parentNode.appendChild(downloadWithImagesBtn);
+    // see https://github.com/tehrobber/civitai-one-click-dl/issues/3
+    parentNode.style.flexFlow = "wrap";
 };
 const $94843b0d32cea2cf$var$addButtons = async ()=>{
     const url = window.location.href;
@@ -12780,6 +12785,6 @@ window.addEventListener("DOMContentLoaded", $94843b0d32cea2cf$var$debouncedAddIm
 //   observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
 // })
 // see https://www.npmjs.com/package/@violentmonkey/url
-(0, $4bc3cf6236ab4204$export$ceb91cd67dddeff1)($94843b0d32cea2cf$var$addButtons);
+(0, $4bc3cf6236ab4204$export$ceb91cd67dddeff1)($94843b0d32cea2cf$var$debouncedAddImages);
 
 })();
