@@ -166,25 +166,25 @@ const addButtons = async () => {
 
 const debouncedAddImages = debounce(
   addButtons,
-  200, // ms, so 0.2 seconds
+  100, // ms, so 0.2 seconds
   { leading: false, trailing: true }
 )
 
 // After DOM is built, but before images/other assets are loaded
 // see https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-addEventListener("DOMContentLoaded", debouncedAddImages)
-// window.addEventListener("popstate", addButtons)
+window.addEventListener("DOMContentLoaded", debouncedAddImages)
 
 // because NextJS's router is garbage and doesn't fire web standard methods,
 // we watch the `main` element for any changes
 // this is why we have dedupe logic and conditional logic
 
 // see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
-// const observer = new MutationObserver(debouncedAddImages)
-
-// document.querySelectorAll(`main`).forEach((mainElement) => {
-//   observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
-// })
+const observer = new MutationObserver(debouncedAddImages)
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(`main`).forEach((mainElement) => {
+    observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
+  })
+})
 
 // see https://www.npmjs.com/package/@violentmonkey/url
 onNavigate(debouncedAddImages)

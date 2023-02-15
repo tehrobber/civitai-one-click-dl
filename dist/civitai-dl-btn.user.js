@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.3.3
+// @version     1.3.4
 // @license     MIT
 // @author      Rob
 // @updateURL   https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js
@@ -12771,22 +12771,27 @@ const $94843b0d32cea2cf$var$addButtons = async ()=>{
     for (const downloadVersionButton of downloadVersionButtons)addBtnPromises.push($94843b0d32cea2cf$var$addImageDownloadBtn(downloadVersionButton));
     await Promise.all(addBtnPromises);
 };
-const $94843b0d32cea2cf$var$debouncedAddImages = (0, (/*@__PURE__*/$parcel$interopDefault($c9e6b0ca29a40fb4$exports)))($94843b0d32cea2cf$var$addButtons, 200, {
+const $94843b0d32cea2cf$var$debouncedAddImages = (0, (/*@__PURE__*/$parcel$interopDefault($c9e6b0ca29a40fb4$exports)))($94843b0d32cea2cf$var$addButtons, 100, {
     leading: false,
     trailing: true
 });
 // After DOM is built, but before images/other assets are loaded
 // see https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-addEventListener("DOMContentLoaded", $94843b0d32cea2cf$var$debouncedAddImages);
-// window.addEventListener("popstate", addButtons)
+window.addEventListener("DOMContentLoaded", $94843b0d32cea2cf$var$debouncedAddImages);
 // because NextJS's router is garbage and doesn't fire web standard methods,
 // we watch the `main` element for any changes
 // this is why we have dedupe logic and conditional logic
 // see https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver 
-// const observer = new MutationObserver(debouncedAddImages)
-// document.querySelectorAll(`main`).forEach((mainElement) => {
-//   observer.observe(mainElement, { attributes: false, childList: true, subtree: true })
-// })
+const $94843b0d32cea2cf$var$observer = new MutationObserver($94843b0d32cea2cf$var$debouncedAddImages);
+window.addEventListener("DOMContentLoaded", ()=>{
+    document.querySelectorAll(`main`).forEach((mainElement)=>{
+        $94843b0d32cea2cf$var$observer.observe(mainElement, {
+            attributes: false,
+            childList: true,
+            subtree: true
+        });
+    });
+});
 // see https://www.npmjs.com/package/@violentmonkey/url
 (0, $4bc3cf6236ab4204$export$ceb91cd67dddeff1)($94843b0d32cea2cf$var$debouncedAddImages);
 $94843b0d32cea2cf$var$debouncedAddImages();
