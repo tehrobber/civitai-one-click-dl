@@ -145,8 +145,9 @@ const addButtons = async () => {
   // })
 
   // pull out the buttons
-  // luckily they are labeled in CivitAI with a `download` property
-  document.querySelectorAll<HTMLAnchorElement>(`a[download]`).forEach((link) => {
+  // luckily they WERE labeled in CivitAI with a `download` property
+  // document.querySelectorAll<HTMLAnchorElement>(`a[download]`).forEach((link) => {
+  document.querySelectorAll<HTMLAnchorElement>(`a[href^="/api/download"]`).forEach((link) => {
     // allDownloadLinks.push(link);
 
     // link that contains "Latest" is the main DL button

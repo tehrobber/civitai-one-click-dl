@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.3.4
+// @version     1.3.5
 // @license     MIT
 // @author      Rob
 // @updateURL   https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js
@@ -12758,8 +12758,9 @@ const $94843b0d32cea2cf$var$addButtons = async ()=>{
     //    if (link.href.includes('api/download')) { console.log(link) }
     // })
     // pull out the buttons
-    // luckily they are labeled in CivitAI with a `download` property
-    document.querySelectorAll(`a[download]`).forEach((link)=>{
+    // luckily they WERE labeled in CivitAI with a `download` property
+    // document.querySelectorAll<HTMLAnchorElement>(`a[download]`).forEach((link) => {
+    document.querySelectorAll(`a[href^="/api/download"]`).forEach((link)=>{
         // allDownloadLinks.push(link);
         // link that contains "Latest" is the main DL button
         if (link.innerText.includes("Latest")) downloadLatestButton = link;
