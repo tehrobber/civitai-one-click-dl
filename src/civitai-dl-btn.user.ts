@@ -76,10 +76,11 @@ const addImageDownloadBtn = async (downloadBtn: HTMLAnchorElement | undefined): 
     const originalWidth = image.width
     const imageUrl = image.url
       .replace(/width=\d+/, `width=${originalWidth}`)
-      // after the image CDN change, the original url returns a 302
-      // for some reason, zipjs chokes on that
-      // so pro-actively replace the old CDN URL with the new CDN URL
-      .replace("image.civitai.com", "imagecache.civitai.com")
+    // TODO CivitAI no longer does the following...
+    // after the image CDN change, the original url returns a 302
+    // for some reason, zipjs chokes on that
+    // so pro-actively replace the old CDN URL with the new CDN URL
+    // .replace("image.civitai.com", "imagecache.civitai.com")
 
     return imageUrl
   })

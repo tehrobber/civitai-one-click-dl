@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.4.5
+// @version     1.4.6
 // @license     MIT
 // @author      Rob
 // @updateURL   https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js
@@ -12840,10 +12840,12 @@ const $94843b0d32cea2cf$var$addImageDownloadBtn = async (downloadBtn)=>{
         // image URLs by default will resize and lose metadata
         // update the URL to the original size to get that metadata
         const originalWidth = image.width;
-        const imageUrl = image.url.replace(/width=\d+/, `width=${originalWidth}`)// after the image CDN change, the original url returns a 302
+        const imageUrl = image.url.replace(/width=\d+/, `width=${originalWidth}`);
+        // TODO CivitAI no longer does the following...
+        // after the image CDN change, the original url returns a 302
         // for some reason, zipjs chokes on that
         // so pro-actively replace the old CDN URL with the new CDN URL
-        .replace("image.civitai.com", "imagecache.civitai.com");
+        // .replace("image.civitai.com", "imagecache.civitai.com")
         return imageUrl;
     });
     const modelNameNoExt = modelName.split(".").slice(0, -1).join(".");

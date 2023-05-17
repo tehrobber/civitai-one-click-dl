@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://civitai.com/*
 // @grant       none
-// @version     1.4.5
+// @version     1.4.6
 // @license     MIT
 // @author      Rob
 // @updateURL   https://github.com/tehrobber/civitai-one-click-dl/raw/master/dist/civitai-dl-btn.user.js
